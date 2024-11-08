@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-8 col-lg-6 col-xl-4">
+            <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+
+            <div class="input-group rounded mb-3">
+              <input
+                type="search"
+                id="weather-input"
+                class="form-control rounded"
+                placeholder="City"
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <button id="search-button">
+                <span>Check!</span>
+              </button>
+            </div>
+
+            <div class="celsius">
+              <div class="mb-4 pb-2">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadioCelsius"
+                    value="celsius"
+                    checked
+                  />
+                  <label class="form-check-label" for="inlineRadioCelsius"
+                    >Celsius</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadioFahrenheit"
+                    value="fahrenheit"
+                  />
+                  <label class="form-check-label" for="inlineRadioFahrenheit"
+                    >Fahrenheit</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow-0 border">
+              <div class="card-body p-4">
+                <h4 class="mb-1 sfw-normal" id="wrapper-name">City, Country</h4>
+                <p class="mb-2">
+                  Current temperature: <strong id="wrapper-temp">--°C</strong>
+                </p>
+                <p>Feels like: <strong id="wrapper-feels-like">--°C</strong></p>
+                <p>
+                 TODAY: Max: <strong id="wrapper-max-temp">--°C</strong>, Min:
+                  <strong id="wrapper-min-temp">--°C</strong>
+                </p>
+
+                <div class="d-flex flex-row align-items-center">
+                  <p class="mb-0 me-4" id="wrapper-description">--</p>
+                  <img
+                    id="weather-icon"
+                    class="fa-3x"
+                    alt="weather icon"
+                    style="color: #eee"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="location-alert"
+          class="alert"
+          style="
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+          "
+        >
+          <span id="location-alert-message"></span>
+          <button
+            id="close-alert"
+            style="
+              border: none;
+              background: none;
+              color: white;
+              cursor: pointer;
+              margin-left: 1px;
+            "
+          >
+            ✖
+          </button>
+        </div>
+      </div>
+    </section>
+    <div icon="sunny" data-label="Sunny">
+      <span class="sun"></span>
+    </div>
+
+    <div icon="cloudy" data-label="Perfect">
+      <span class="cloud"></span>
+      <span class="cloud"></span>
+    </div>
+
+    <div icon="snowy" data-label="Chilly">
+      <span class="snowman"></span>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <div icon="stormy" data-label="Soggy">
+      <span class="cloud"></span>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
